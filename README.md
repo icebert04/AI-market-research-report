@@ -32,6 +32,13 @@ To use this application, follow these steps:
 
 3. The scraped market data will be displayed in JSON format on the frontend.
 
+____
+## Screenshot
+You can place your category and input your URL.
+![image](/public/MRR.png)
+for this example we used this link : https://finance.yahoo.com/news/the-worst-government-shutdowns-and-the-stock-market-what-history-shows-usually-happens-142728907.html
+____
+
 ### Future Enhancements
 
 While this application serves as a basic example of web scraping and data presentation, you can consider adding the following features in the future:
