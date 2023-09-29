@@ -38,16 +38,19 @@ export default function MarketResearchForm() {
       const data = await response.json();
       setMarketData(data.market_data);
   
+      // Log successful data retrieval
+      console.log('Data received from the backend:', data);
     } catch (error) {
       console.error(error);
       alert('Error: Failed to fetch insights from the backend.');
     }
   };
   
+  
 
   return (
-    <div>
-      <h2>Generate Market Research Insights</h2>
+    <div className="container">
+      <h2 className="title">Generate Market Research Insights</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="investmentSector">Investment Sector:</label>
@@ -58,6 +61,7 @@ export default function MarketResearchForm() {
             value={investmentSector}
             onChange={handleInputChange}
             required
+            className="input-field"
           />
         </div>
         <div>
@@ -69,11 +73,14 @@ export default function MarketResearchForm() {
             value={newsSite}
             onChange={handleInputChange}
             required
+            className="input-field"
           />
         </div>
-        <button type="submit">Generate Insights</button>
-      </form>
-
+        <button type="submit" className="submit-button">
+          Generate Insights
+        </button>
+      </form>  
+      
       {articleText && (
         <div>
           <h3>Article Text:</h3>

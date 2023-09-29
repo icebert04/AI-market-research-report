@@ -108,6 +108,16 @@
   margin-left: 0.5rem;
 }
 
+/* Center the entire component */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

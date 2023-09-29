@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 html,
 body {
   padding: 0;
@@ -13,4 +17,35 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+
+/* Style the title */
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style the input fields */
+.input-field {
+  border: none;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+/* Style the submit button */
+.submit-button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
 }

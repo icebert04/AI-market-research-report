@@ -4,6 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 from flask_cors import CORS
 import re
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 app = Flask(__name__)
 CORS(app, resources={r"/generate-insights": {"origins": "http://localhost:3000"}}, supports_credentials=True, methods=["POST"])
@@ -104,27 +109,31 @@ CORS(app, resources={r"/generate-insights": {"origins": "http://localhost:3000"}
     
 #     return insights, chart_image
 
-# Function to scrape data from a URL
 def scrape_data(url):
     try:
-        response = requests.get(url)
-        if response.status_code != 200:
-            return {"error": "Failed to fetch data from the website."}
+        # Set up the Selenium WebDriver (update the path to your WebDriver)
+        driver = webdriver.Chrome(executable_path='/path/to/chromedriver')
 
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Extract text from the HTML
-        page_text = soup.get_text()
+        # Load the webpage
+        driver.get(url)
 
-        # Find patterns like "^GSPC +0.59%"
-        market_data_matches = re.findall(r"\^[\w\d]+\s*[+-]?\d+\.\d+%", page_text)
+        # Wait for the element to appear (adjust timeout as needed)
+        wait = WebDriverWait(driver, 10)
+        element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'xray-fin-streamer')))
 
-        if not market_data_matches:
-            return {"error": "No market data found on the page."}
+        # Extract the text from the element
+        element_text = element.text.strip()
 
-        return {"market_data": market_data_matches}
+        # Close the browser
+        driver.quit()
+
+        # Now, 'element_text' contains the content you scraped
+        print("Scraped element content:", element_text)
+
+        return {"content": element_text}
 
     except Exception as e:
+        print(f"An error occurred: {str(e)}")
         return {"error": str(e)}
 
 @app.route('/generate-insights', methods=['POST'])
