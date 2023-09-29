@@ -117,12 +117,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Python
 - Flask
-
-### Acknowledgments
-
-- MoviePy
-- gTTS (Google Text-to-Speech)
-- FFMPEG
+- Selenium
+- BeautifulSoup
 
 ### Contact Information
 
