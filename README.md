@@ -4,7 +4,7 @@
 
 ### Overview
 
-This project is a simple web application for scraping market data from a specified URL and displaying it in JSON format on the frontend. It is intended to provide users with a basic understanding of how to extract financial market data from a website and display it on a web interface.
+This project is a simple web application for scraping market data. It is intended to provide users with a basic understanding of how to extract financial market data from a website and display it on a web interface.
 
 The primary function of this application is to scrape financial market data represented in the format `^GSPC +0.59%` or similar from a provided news site URL and present it as a JSON response on the frontend.
 
