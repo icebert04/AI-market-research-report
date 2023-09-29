@@ -1,34 +1,122 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Market Research Report
 
-## Getting Started
+## Market Data Scraper and Insights Generator
 
-First, run the development server:
+### Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+This project is a simple web application for scraping market data from a specified URL and displaying it in JSON format on the frontend. It is intended to provide users with a basic understanding of how to extract financial market data from a website and display it on a web interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The primary function of this application is to scrape financial market data represented in the format `^GSPC +0.59%` or similar from a provided news site URL and present it as a JSON response on the frontend.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Getting Started
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+To use this application, follow these steps:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Clone this repository to your local machine.
 
-## Learn More
+2. Install the required Python packages listed in `requirements.txt`. You can do this using pip.
 
-To learn more about Next.js, take a look at the following resources:
+3. Install the required JavaScript packages. Navigate to the frontend directory and run npm install.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Start the Python backend server using python app.py.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Start the React frontend development server using npm start.
 
-## Deploy on Vercel
+6. Open your web browser and access the application at http://localhost:3000.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### How to Use
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Enter the URL of the news site you want to scrape in the "News Site URL" input field.
+
+2. Click the "Generate Insights" button.
+
+3. The scraped market data will be displayed in JSON format on the frontend.
+
+### Future Enhancements
+
+While this application serves as a basic example of web scraping and data presentation, you can consider adding the following features in the future:
+
+- User Authentication: Implement user authentication to track user activity and provide a personalized experience.
+
+- Database Storage: Store scraped data and user interaction history in a database for analysis and historical data retrieval.
+
+- Sentiment Analysis: Incorporate sentiment analysis to provide insights into market sentiment based on news articles.
+
+- Interactive Charts: Enhance the frontend to display interactive charts that visualize market data trends.
+
+- Customization: Allow users to select specific financial instruments or customize the types of data they want to scrape.
+
+### License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Text-to-Video VSL Generator
+
+### Overview
+
+The Text-to-Video VSL Generator is a Python application that allows users to input text and generate a video with a voiceover reading the text while displaying it in the video. It's a versatile tool that can be used for various purposes, including creating Video Sales Letters (VSLs) and educational content.
+
+**NOTE:** This is still a work in progress, so most of these functions will not be complete.
+
+### Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository to your local machine.
+
+2. Change to the project directory.
+
+3. Install the required Python packages using pip.
+
+4. Make sure you have the 'ImageMagick' binary installed. You can download it from the official website.
+
+5. Run the application.
+
+Now your Text-to-Video VSL Generator is up and running locally.
+
+### Usage
+
+To use the Text-to-Video VSL Generator, make a POST request to the /generate-video endpoint with the required parameters.
+
+### Configuration Options
+
+You can customize the appearance and behavior of the generated videos by adjusting the provided configuration options.
+
+### Examples
+
+Here are some usage examples of the Text-to-Video VSL Generator:
+
+- Basic Usage: Generate a video with default settings.
+
+- Customized Appearance: Customize font color and background color.
+
+- Background Image: Add a background image to the video.
+
+### Contributing
+
+If you would like to contribute to this project, please follow the guidelines outlined in the repository.
+
+### License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+### Frontend
+
+- Next.js
+- Axios
+- React
+
+### Backend
+
+- Python
+- Flask
+
+### Acknowledgments
+
+- MoviePy
+- gTTS (Google Text-to-Speech)
+- FFMPEG
+
+### Contact Information
+
+If you have any questions or suggestions, feel free to contact me.
